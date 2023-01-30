@@ -74,6 +74,7 @@
 #define HOSTS_ID           "hosts"
 #define OS_ID              "os"
 #define BROWSERS_ID        "browsers"
+#define BROWSERS_REQUESTS_ID   "browsers_requests"
 #define REFERRERS_ID       "referrers"
 #define REFERRING_SITES_ID "referring_sites"
 #define KEYPHRASES_ID      "keyphrases"

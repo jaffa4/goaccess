@@ -96,6 +96,10 @@ static GHTML htmldef[] = {
     {CHART_VBAR, hits_visitors_plot, 0, 1, NULL, NULL},
     {CHART_VBAR, hits_bw_plot, 0, 1, NULL, NULL},
   }},
+  {BROWSERS_REQUESTS, 1, print_metrics, {
+    {CHART_VBAR, hits_visitors_plot, 0, 1, NULL, NULL},
+    {CHART_VBAR, hits_bw_plot, 0, 1, NULL, NULL},
+  }},
   {VISIT_TIMES, 1, print_metrics, {
     {CHART_AREASPLINE, hits_visitors_plot, 0, 1, NULL, NULL},
     {CHART_AREASPLINE, hits_bw_plot, 0, 1, NULL, NULL},

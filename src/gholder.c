@@ -69,6 +69,7 @@ static GPanel paneling[] = {
   {HOSTS           , add_host_to_holder , add_host_child_to_holder} ,
   {OS              , add_root_to_holder , NULL},
   {BROWSERS        , add_root_to_holder , NULL},
+  {BROWSERS_REQUESTS, add_root_to_holder , NULL},
   {VISIT_TIMES     , add_data_to_holder , NULL},
   {VIRTUAL_HOSTS   , add_data_to_holder , NULL},
   {REFERRERS       , add_data_to_holder , NULL},

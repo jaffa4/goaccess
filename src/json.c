@@ -80,6 +80,7 @@ static GPanel paneling[] = {
   {HOSTS               , print_json_data , print_json_host_items } ,
   {OS                  , print_json_data , print_json_sub_items } ,
   {BROWSERS            , print_json_data , print_json_sub_items } ,
+  {BROWSERS_REQUESTS   , print_json_data , print_json_sub_items } ,
   {VISIT_TIMES         , print_json_data , NULL } ,
   {VIRTUAL_HOSTS       , print_json_data , NULL } ,
   {REFERRERS           , print_json_data , NULL } ,

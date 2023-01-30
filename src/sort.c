@@ -113,6 +113,7 @@ GSort module_sort[TOTAL_MODULES] = {
   {HOSTS               , SORT_BY_HITS , SORT_DESC } ,
   {OS                  , SORT_BY_HITS , SORT_DESC } ,
   {BROWSERS            , SORT_BY_HITS , SORT_DESC } ,
+  {BROWSERS_REQUESTS   , SORT_BY_HITS , SORT_DESC } ,
   {VISIT_TIMES         , SORT_BY_DATA , SORT_ASC  } ,
   {VIRTUAL_HOSTS       , SORT_BY_HITS , SORT_DESC } ,
   {REFERRERS           , SORT_BY_HITS , SORT_DESC } ,

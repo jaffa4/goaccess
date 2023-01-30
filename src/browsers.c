@@ -58,7 +58,6 @@ static const char *browsers[][2] = {
   {"Valve Steam", "Game Systems"},
   {"Origin", "Game Systems"},
   {"Raptr", "Game Systems"},
-
   /* Based on Internet Explorer */
   {"Avant Browser", "Others"},
   /* Internet Explorer */
@@ -575,6 +574,7 @@ verify_browser (char *str, char *type) {
   for (i = 0; i < conf.browsers_hash_idx; ++i) {
     if ((match = strstr (str, conf.user_browsers_hash[i][0])) == NULL)
       continue;
+    //fprintf (stderr, "matched %s\n", str);
     return parse_browser (match, type, i, conf.user_browsers_hash);
   }
 

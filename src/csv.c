@@ -70,6 +70,7 @@ static GPanel paneling[] = {
   {HOSTS           , print_csv_data} ,
   {OS              , print_csv_data} ,
   {BROWSERS        , print_csv_data} ,
+  {BROWSERS_REQUESTS , print_csv_data} ,
   {VISIT_TIMES     , print_csv_data} ,
   {VIRTUAL_HOSTS   , print_csv_data} ,
   {REFERRERS       , print_csv_data} ,

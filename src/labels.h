@@ -174,6 +174,13 @@
 #define BROWSERS_LABEL                 \
   N_("Browsers")
 
+#define BROWSERS_REQUESTS_HEAD                  \
+  N_("Browsers/Requests")
+#define BROWSERS_REQUESTS_DESC                  \
+  N_("Top Browsers sorted by hits [, avgts, cumts, maxts]")
+#define BROWSERS_REQUESTS_LABEL                 \
+  N_("Browsers/Requests")
+
 #define REFERRERS_HEAD                 \
   N_("Referer URLs")
 #define REFERRERS_DESC                 \

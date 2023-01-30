@@ -64,6 +64,7 @@ static GEnum enum_modules[] = {
   {"HOSTS"           , HOSTS}           ,
   {"OS"              , OS}              ,
   {"BROWSERS"        , BROWSERS}        ,
+  {"BROWSERS_REQUESTS", BROWSERS_REQUESTS},
   {"VISIT_TIMES"     , VISIT_TIMES}     ,
   {"VIRTUAL_HOSTS"   , VIRTUAL_HOSTS}   ,
   {"REFERRERS"       , REFERRERS}       ,

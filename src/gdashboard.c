@@ -1091,6 +1091,7 @@ render_content (WINDOW * win, GDashModule * data, int *y, int *offset,
       /* account for 2 lines at the header and 2 blank lines */
       j = ((i % size) - data_pos) + gscroll->module[module].offset;
       /* actual data */
+     
       render_data_line (win, data, y, j, gscroll);
     } else {
       /* everything else should be empty */

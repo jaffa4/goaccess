@@ -113,6 +113,7 @@ static GScroll gscroll = {
      {0, 0}, /* HOSTS           { scroll, offset} */
      {0, 0}, /* OS              { scroll, offset} */
      {0, 0}, /* BROWSERS        { scroll, offset} */
+     {0, 0}, /* BROWSERS_REQUESTS  { scroll, offset} */
      {0, 0}, /* VISIT_TIMES     { scroll, offset} */
      {0, 0}, /* VIRTUAL_HOSTS   { scroll, offset} */
      {0, 0}, /* REFERRERS       { scroll, offset} */
@@ -1099,7 +1100,7 @@ get_keys (Logs * logs) {
       if (set_module_to (&gscroll, STATUS_CODES) == 0)
         render_screens (offset);
       break;
-    case 36:   /* Shift + 4 */
+    case 36:   /* Shift + 4 */ 
       /* reset expanded module */
       if (set_module_to (&gscroll, REMOTE_USER) == 0)
         render_screens (offset);
@@ -1129,6 +1130,12 @@ get_keys (Logs * logs) {
     case 40:   /* Shift + 8 */
       /* reset expanded module */
       if (set_module_to (&gscroll, TLS_TYPE) == 0)
+        render_screens (offset);
+      break;
+
+    case 41:   /* Shift + 0 */
+      /* reset expanded module */
+      if (set_module_to (&gscroll, BROWSERS_REQUESTS) == 0)
         render_screens (offset);
       break;
     case 9:    /* TAB */

@@ -52,9 +52,9 @@ extern struct tm now_tm;
 
 /* total number of modules */
 #ifdef HAVE_GEOLOCATION
-#define TOTAL_MODULES    19
+#define TOTAL_MODULES    20
 #else
-#define TOTAL_MODULES    17
+#define TOTAL_MODULES    18
 #endif
 
 /* maximum number of items within a panel */
@@ -99,6 +99,7 @@ typedef enum MODULES {
   HOSTS,
   OS,
   BROWSERS,
+  BROWSERS_REQUESTS,
   VISIT_TIMES,
   VIRTUAL_HOSTS,
   REFERRERS,

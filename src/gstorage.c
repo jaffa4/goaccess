@@ -56,6 +56,7 @@
 static int gen_visitor_key (GKeyData * kdata, GLogItem * logitem);
 static int gen_404_key (GKeyData * kdata, GLogItem * logitem);
 static int gen_browser_key (GKeyData * kdata, GLogItem * logitem);
+static int gen_browser_requests_key (GKeyData * kdata, GLogItem * logitem);
 static int gen_host_key (GKeyData * kdata, GLogItem * logitem);
 static int gen_keyphrase_key (GKeyData * kdata, GLogItem * logitem);
 static int gen_os_key (GKeyData * kdata, GLogItem * logitem);
@@ -213,6 +214,19 @@ static GParse paneling[] = {
   }, {
     BROWSERS,
     gen_browser_key,
+    insert_data,
+    insert_rootmap,
+    insert_hit,
+    insert_visitor,
+    insert_bw,
+    insert_cumts,
+    insert_maxts,
+    NULL,
+    NULL,
+    NULL,
+  },  {
+    BROWSERS_REQUESTS,
+   gen_browser_requests_key ,
     insert_data,
     insert_rootmap,
     insert_hit,
@@ -1055,6 +1069,37 @@ gen_browser_key (GKeyData * kdata, GLogItem * logitem) {
 
   return 0;
 }
+
+
+/* Generate a browser unique key for the browser/request's panel given a user
+ * agent and assign the browser type/category as a root element.
+ *
+ * On error, 1 is returned.
+ * On success, the generated browser key is assigned to our key data
+ * structure. */
+static int
+gen_browser_requests_key (GKeyData * kdata, GLogItem * logitem) {
+  if (logitem->agent == NULL || *logitem->agent == '\0')
+    return 1;
+  if (logitem->browser == NULL || *logitem->browser == '\0')
+    return 1;
+
+ if (!logitem->req)
+    return 1;
+
+  if (logitem->qstr)
+    append_query_string (&logitem->req, logitem->qstr);
+  logitem->req_key = gen_unique_req_key (logitem);
+
+  get_kdata (kdata, logitem->req_key, logitem->req);
+
+  /* Firefox */
+  get_kroot (kdata, logitem->browser_type, logitem->browser_type);
+  kdata->numdate = logitem->numdate;
+  //fprintf (stderr, "browser type %s\n", logitem->browser_type);
+  return 0;
+}
+
 
 /* Generate an operating system unique key for the OS' panel given a
  * user agent and assign the OS type/category as a root element.
